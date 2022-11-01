@@ -42,7 +42,7 @@ interface OpenTaskComposerProps {
   submit: (formData: { title: string }, event: FormEvent<HTMLFormElement>) => void;
 }
 
-const OpenTaskComposer: FC<OpenTaskComposerProps> = ({ close, submit }) => {
+export const OpenTaskComposer: FC<OpenTaskComposerProps> = ({ close, submit }) => {
   const submitRef = useRef(submit);
 
   const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
@@ -60,8 +60,8 @@ const OpenTaskComposer: FC<OpenTaskComposerProps> = ({ close, submit }) => {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Paper>
-              <form id="task-composer" noValidate onSubmit={handleSubmit}>
-                <TextField fullWidth type="text" id="title" name="title" />
+              <form id="task-composer" data-testid="task-composer" noValidate onSubmit={handleSubmit}>
+                <TextField fullWidth type="text" id="title" name="title" label="Title" />
               </form>
             </Paper>
           </Grid>
@@ -89,7 +89,7 @@ export const TaskComposer: FC = () => {
   }
 
   return (
-    <Button fullWidth startIcon={<AddIcon />} onClick={open}>
+    <Button data-testid="open-task-composer" fullWidth startIcon={<AddIcon />} onClick={open}>
       Add task
     </Button>
   );

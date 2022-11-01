@@ -60,7 +60,6 @@ const useTaskPage = () => {
 export const TaskPage: FC = () => {
   const { task, onClose, onSubmit, onDelete } = useTaskPage();
 
-  // This should present some error, but I have no time to do it :)
   if (!task) {
     return <Navigate to=".." relative="route" />;
   }
