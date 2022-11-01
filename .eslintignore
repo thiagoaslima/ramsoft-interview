@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.prettierrc.js
+.eslintrc.cjs
+.eslintrc.js
+*.config.js
+*.config.ts
+env.d.ts
